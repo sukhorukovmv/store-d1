@@ -13,7 +13,6 @@ import {
   DateField,
   EditButton,
 } from "react-admin";
-import RichTextInput from "ra-input-rich-text";
 
 export const ProductList = (props) => (
   <List {...props}>
