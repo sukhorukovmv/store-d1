@@ -14,7 +14,6 @@ import {
   DateField,
   EditButton,
 } from "react-admin";
-import RichTextInput from "ra-input-rich-text";
 
 export const UserList = (props) => (
   <List {...props}>

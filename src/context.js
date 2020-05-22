@@ -9,7 +9,7 @@ class ProductProvider extends Component {
     detailProduct: detailProduct,
     cart: [],
     modalOpen: false,
-    isAdmin: true,
+    isAdmin: false,
     modalProduct: detailProduct,
     cartSubTotal: 0,
     cartTax: 0,
