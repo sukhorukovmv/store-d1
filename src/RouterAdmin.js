@@ -6,6 +6,7 @@ import Details from "./components/Details";
 import Cart from "./components/Cart/Cart";
 import ProductList from "./components/ProductList";
 import Auth from "./components/Auth/Auth";
+import Test from "./components/Redux/Test";
 import AdminPage from "./components/Admin/AdminPage";
 import { ProductConsumer } from "./context";
 
@@ -26,6 +27,7 @@ export default function RouterAdmin() {
                 <Route path="/details" component={Details} />
                 <Route path="/cart" component={Cart} />
                 <Route path="/auth" component={Auth} />
+                <Route path="/test" component={Test} />
                 <Route component={Default} />
               </Switch>
             </React.Fragment>
