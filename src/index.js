@@ -4,18 +4,18 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ProductProvider } from "./context";
-import { connect, Provider } from "react-redux";
-import { store, putStateToProps, putActionsToProps } from "./App";
+import { Provider } from "react-redux";
+import { store } from "./App";
 import * as serviceWorker from "./serviceWorker";
 import {} from "./components/Redux/Test";
-const WrapperMainComponent = connect(putStateToProps, putActionsToProps)(App);
+//const WrapperMainComponent = connect(putStateToProps, putActionsToProps)(App);
 
 ReactDOM.render(
   <React.StrictMode>
     <ProductProvider>
       <Provider store={store}>
         <Router>
-          <WrapperMainComponent />
+          <App />
         </Router>
       </Provider>
     </ProductProvider>

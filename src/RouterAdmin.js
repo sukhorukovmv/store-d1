@@ -5,7 +5,7 @@ import Default from "./components/Default";
 import Details from "./components/Details";
 import Cart from "./components/Cart/Cart";
 import ProductList from "./components/ProductList";
-import Auth from "./components/Auth/Auth";
+import AuthContainer from "./components/Auth/AuthContainer";
 import Test from "./components/Redux/Test";
 import AdminPage from "./components/Admin/AdminPage";
 import { ProductConsumer } from "./context";
@@ -26,7 +26,7 @@ export default function RouterAdmin() {
                 <Route exact path="/" component={ProductList} />
                 <Route path="/details" component={Details} />
                 <Route path="/cart" component={Cart} />
-                <Route path="/auth" component={Auth} />
+                <Route path="/auth" component={AuthContainer} />
                 <Route path="/test" component={Test} />
                 <Route component={Default} />
               </Switch>
