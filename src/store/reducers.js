@@ -1,11 +1,11 @@
 //import {ACTION_CHANGE_FIRST_NAME, ACTION_CHANGE_SECOND_NAME} from './actionsConst';
 import { combineReducers } from "redux";
 import { authReducer } from "./Auth/reducers";
-import { registrationReducer } from "./Registration/reducers";
+import { cartReducer } from "./Cart/reducers";
 
 export const rootReducer = combineReducers({
   auth: authReducer,
-  registration: registrationReducer,
+  cart: cartReducer
 });
 
 /* const initialState = {
