@@ -1,14 +1,22 @@
-import React, { Component } from 'react';
-import { ProductConsumer } from '../context';
-import { Link } from 'react-router-dom';
-import { ButtonContainer } from './Button';
+import React, { Component } from "react";
+import { ProductConsumer } from "../context";
+import { Link } from "react-router-dom";
+import { ButtonContainer } from "./Button";
 
 export default class Details extends Component {
   render() {
     return (
       <ProductConsumer>
         {(value) => {
-          const { id, company, img, info, price, title, inCart } = value.detailProduct;
+          const {
+            id,
+            company,
+            img,
+            info,
+            price,
+            title,
+            inCart,
+          } = value.detailProduct;
           return (
             <div className="container py-5">
               {/* title */}
@@ -28,9 +36,8 @@ export default class Details extends Component {
                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
                   <h2>Модель : {title} </h2>
                   <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
-                    производитель : <span className="text-uppercase">
-                      {company}
-                    </span>
+                    производитель :{" "}
+                    <span className="text-uppercase">{company}</span>
                   </h4>
                   <h4 className="text-blue">
                     <strong>
@@ -43,10 +50,8 @@ export default class Details extends Component {
                   </p>
                   <p className="text-muted lead"> {info} </p>
                   {/* buttons */}
-                  <Link to='/'>
-                    <ButtonContainer>
-                      к товарам
-                    </ButtonContainer>
+                  <Link to="/">
+                    <ButtonContainer>к товарам</ButtonContainer>
                   </Link>
                   <ButtonContainer
                     cart
@@ -54,13 +59,14 @@ export default class Details extends Component {
                     onClick={() => {
                       value.addToCart(id);
                       value.openModal(id);
-                    }}>
+                    }}
+                  >
                     {inCart ? "в корзинe" : "добавить в корзину"}
                   </ButtonContainer>
                 </div>
               </div>
             </div>
-          )
+          );
         }}
       </ProductConsumer>
     );
