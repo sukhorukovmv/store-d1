@@ -1,5 +1,5 @@
 //import { AUTH_CHANGE_EMAIL_TEXT, AUTH_CHANGE_PASSWORD_TEXT } from "./actions";
-import { CART_DECREMENT, CART_INCREMENT, CART_REMOVE_ITEM } from "./actions";
+import { CART_DECREMENT, CART_INCREMENT, CART_REMOVE_ITEM, CLEAR_CART, TOTAL } from "./actions";
 const defualtState = {
   cart: [
     {
@@ -15,53 +15,51 @@ const defualtState = {
 };
 
 const increment = (cart, id) => {
-  for (let i = 0; i < cart.length; i++) {
-    if (cart[i].productId === id) {
-      cart[i].productCount += 1;
-    }
+  let index = cart.findIndex((item) => item.productId === id);
+  cart[index].productCount += 1;
+  return cart;
+};
+
+const removeItem = (cart, id) => {
+  return cart.filter((item) => item.productId !== id);
+};
+
+const decrement = (cart, id) => {
+  let index = cart.findIndex((item) => item.productId === id);
+  cart[index].productCount -= 1;
+  if (cart[index].productCount <= 0) {
+    return removeItem(cart, id);
   }
+  return cart;
 };
 
 export const cartReducer = (state = defualtState, action) => {
   switch (action.type) {
-    case CART_INCREMENT: {
-      let cart = [...state.cart];
-      for (let i = 0; i < cart.length; i++) {
-        if (cart[i].productId === action.payload) {
-          cart[i].productCount += 1;
-        }
-        console.log(cart[i]);
-      }
-      increment(...state.cart, action.payload);
+    case CART_INCREMENT:
       return {
         ...state,
-        cart: [...cart],
+        cart: [...increment(state.cart, action.payload)],
       };
-    }
-    case CART_DECREMENT: {
-      let cart = [...state.cart];
-      for (let i = 0; i < cart.length; i++) {
-        if (cart[i].productId === action.payload) {
-          cart[i].productCount -= 1;
-        }
-        console.log(cart[i]);
-      }
+    case CART_DECREMENT:
       return {
         ...state,
-        cart: [...cart],
+        cart: [...decrement(state.cart, action.payload)],
       };
-    }
     case CART_REMOVE_ITEM: {
-      let cart = [...state.cart];
-      for (let i = 0; i < cart.length; i++) {
-        if (cart[i].productId === action.payload) {
-          cart[i].productCount -= 1;
-        }
-        console.log(cart[i]);
-      }
       return {
         ...state,
-        cart: [...cart],
+        cart: [...removeItem(state.cart, action.payload)],
+      };
+    }
+    case CLEAR_CART: {
+      return {
+        ...state,
+        cart: [],
+      };
+    }
+    case TOTAL: { return {
+        ...state,
+        cartTotal: 100,
       };
     }
     default:

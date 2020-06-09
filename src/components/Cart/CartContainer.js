@@ -1,7 +1,7 @@
 import React from "react";
 import Cart from "./Cart";
 import { connect } from "react-redux";
-import { cartIncrementItem, cartDecrementItem, cartRemoveItem} from "../../store/Cart/actions";
+import { clearCart, total, cartIncrementItem, cartDecrementItem, cartRemoveItem} from "../../store/Cart/actions";
 
 class CartContainer extends React.Component {
   render() {
@@ -11,6 +11,8 @@ class CartContainer extends React.Component {
         cartIncrementItem={this.props.cartIncrementItem}
         cartDecrementItem={this.props.cartDecrementItem}
         cartRemoveItem={this.props.cartRemoveItem}
+        clearCart={this.props.clearCart}
+        total={this.props.total}
       ></Cart>
     );
   }
@@ -26,7 +28,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   cartIncrementItem,
   cartDecrementItem,
-  cartRemoveItem
+  cartRemoveItem,
+  clearCart,
+  total
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartContainer);
