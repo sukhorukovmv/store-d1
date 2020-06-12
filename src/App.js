@@ -1,12 +1,11 @@
 import React from "react";
-import { Switch, Route, Router } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Default from "./components/Default";
 import Details from "./components/Details";
 import Cart from "./components/Cart/Cart";
 import ProductList from "./components/ProductList";
 import Auth from "./components/Auth/Auth";
-import Test from "./components/Redux/Test";
 import Modal from "./components/Modal";
 
 import "./App.css";
@@ -21,7 +20,6 @@ export default function App(props) {
         <Route path="/details" component={Details} />
         <Route path="/cart" component={Cart} />
         <Route path="/auth" component={Auth} />
-        <Route path="/test" component={Test} />
         <Route component={Default} />
       </Switch>
       <Modal />

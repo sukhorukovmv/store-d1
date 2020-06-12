@@ -5,7 +5,6 @@ import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ProductProvider } from "./context";
 import * as serviceWorker from "./serviceWorker";
-import {} from "./components/Redux/Test";
 
 ReactDOM.render(
   <React.StrictMode>

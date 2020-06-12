@@ -15,7 +15,7 @@ export default function ProductSearchName(props) {
           <option>Красота и здоровье</option>
           <option>Бытовая техника</option>
         </select>
-        <form action="" method="get" class="col-8 ">
+        <form action="" method="get" class="col-8">
           <input name="s" placeholder="Поиск по названию" type="search" />
           <button type="submit"></button>
         </form>
