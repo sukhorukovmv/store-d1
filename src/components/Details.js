@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { ProductConsumer } from "../context";
-import { Link } from "react-router-dom";
-import { ButtonContainer } from "./Button";
+import React, { Component } from 'react'
+import { ProductConsumer } from '../context'
+import { Link } from 'react-router-dom'
+import { ButtonContainer } from './Button'
 
 export default class Details extends Component {
   render() {
@@ -16,7 +16,7 @@ export default class Details extends Component {
             price,
             title,
             inCart,
-          } = value.detailProduct;
+          } = value.detailProduct
           return (
             <div className="container py-5">
               {/* title */}
@@ -36,7 +36,7 @@ export default class Details extends Component {
                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
                   <h2>Модель : {title} </h2>
                   <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
-                    производитель :{" "}
+                    производитель :{' '}
                     <span className="text-uppercase">{company}</span>
                   </h4>
                   <h4 className="text-blue">
@@ -57,18 +57,18 @@ export default class Details extends Component {
                     cart
                     disabled={inCart ? true : false}
                     onClick={() => {
-                      value.addToCart(id);
-                      value.openModal(id);
+                      value.addToCart(id)
+                      value.openModal(id)
                     }}
                   >
-                    {inCart ? "в корзинe" : "добавить в корзину"}
+                    {inCart ? 'в корзинe' : 'добавить в корзину'}
                   </ButtonContainer>
                 </div>
               </div>
             </div>
-          );
+          )
         }}
       </ProductConsumer>
-    );
+    )
   }
 }
