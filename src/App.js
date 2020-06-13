@@ -7,6 +7,7 @@ import Cart from "./components/Cart/Cart";
 import ProductList from "./components/ProductList";
 import Auth from "./components/Auth/Auth";
 import Modal from "./components/Modal";
+import './store';
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";

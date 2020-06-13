@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Title from "../Title";
 import CartColumnns from "./CartColumns.js";
 import EmptyCart from "./EmptyCart.js";

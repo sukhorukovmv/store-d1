@@ -5,9 +5,9 @@ import styled from "styled-components";
 export default function ProductSearchName(props) {
   return (
     <ProductSearchNameWrapper>
-      <div class="row ml-auto mr-auto no-gutters">
-        <select class="col-4 ">
-          <option selected="selected">Выберите категорию товара</option>
+      <div className="row ml-auto mr-auto no-gutters">
+        <select className="col-4 ">
+          <option selecte="selected">Выберите категорию товара</option>
           <option>Книги</option>
           <option>Смартфоны и гаджеты</option>
           <option>Телевизоры</option>
@@ -15,7 +15,7 @@ export default function ProductSearchName(props) {
           <option>Красота и здоровье</option>
           <option>Бытовая техника</option>
         </select>
-        <form action="" method="get" class="col-8">
+        <form action="" method="get" className="col-8">
           <input name="s" placeholder="Поиск по названию" type="search" />
           <button type="submit"></button>
         </form>

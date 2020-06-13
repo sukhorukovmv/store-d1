@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import Product from "./Product";
+import React from "react";
 
 export default function Default(props) {
   console.log(props);
